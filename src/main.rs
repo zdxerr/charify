@@ -1,7 +1,10 @@
+use bear_lib_terminal::terminal::state;
 use image::{ImageReader, Pixel, RgbImage, imageops};
 use std::io::Cursor;
-
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // let size = state::cell_size();
+    // println!("Cell size: {}x{} pixels", size.width, size.height);
+    // https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getsystemmetrics
     let img_path = "C:\\Users\\ChristophS\\Desktop\\Surprised_Pikachu.jpg"; // Replace with your file path
     let img: RgbImage = ImageReader::open(img_path)?.decode()?.to_rgb8();
 
