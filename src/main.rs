@@ -21,7 +21,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("Image dimensions: {}x{}", width, height);
 
     let nw = 80;
-    let nh = height / (width / nw);
+    let nh = (height / (width / nw)) / 2; // cursor size ratio
 
     // Scale the image (e.g., to 300x300; use image::imageops::FilterType::Lanczos3 for quality)
     let img = imageops::resize(&img, nw, nh, imageops::FilterType::Lanczos3);
